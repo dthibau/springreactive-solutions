@@ -1,0 +1,21 @@
+
+~	java:S125"<This block of commented-out lines of code should be removed.(ÚÓ…×8´ûöïô1J$ecc26cb3-c9c8-4b7f-af63-b2638b4306a9
+z
+java:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8öªïïô1J$59a27034-a4e9-4d5f-9760-6072d927d6e1
+‚
+java:S1612"@Replace this lambda with method reference 'System.out::println'.(ì»ã8úªïïô1J$0c1bb85f-c0f9-457d-b888-83bf8010aac9
+l	java:S106"+Replace this use of System.out by a logger.(ì»ã8üªïïô1J$349e4661-498f-43ce-ad5e-116abbba1ee2
+~	java:S125"<This block of commented-out lines of code should be removed.(î­”¶8Ì£÷ïô1J$d1d6a0ad-b347-4c80-ab6c-12ee03d67336
+ƒ
+java:S1612$"@Replace this lambda with method reference 'System.err::println'.(ãÇà…8˜´öïô1J$54d3158c-5b4f-41e6-a093-a108f8417abe
+m	java:S106$"+Replace this use of System.err by a logger.(ãÇà…8ûªïïô1J$9ee00ffa-df1c-4289-aaee-f88041416b91
+m	java:S106$"+Replace this use of System.out by a logger.(ãÇà…8«ïïô1J$fbbe920f-ffd3-43aa-8418-d3ed0c600c49
+m	java:S1066"+Replace this use of System.err by a logger.(Ë¨ŸŸ8€«ïïô1J$7097c0ff-376c-4f89-aad1-115bf838977e
+r	java:S1069"+Replace this use of System.out by a logger.(ÜÜ£Éÿÿÿÿÿ8†«ïïô1J$3bbbff13-2a03-4b67-9b7c-7c7efd4d8c6d
+m	java:S106T"+Replace this use of System.err by a logger.(Ë¨ŸŸ8†«ïïô1J$fab32a47-30fa-4148-950f-b748888db158
+r	java:S106W"+Replace this use of System.out by a logger.(ÜÜ£Éÿÿÿÿÿ8Š«ïïô1J$4bccc080-f910-49b8-9ff2-9319f9617fe5
+m	java:S106n"+Replace this use of System.out by a logger.(‰Ö…8±´öïô1J$9ed6e98b-609c-42c8-9c60-9d4447691e0e
+¡
+java:S2142|"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8«ïïô1J$371bcdda-e25b-4dca-b27b-12efb5560e88
+z
+java:S1135}"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ8«ïïô1J$94fc4639-8174-4189-974e-2723b1e7f88c

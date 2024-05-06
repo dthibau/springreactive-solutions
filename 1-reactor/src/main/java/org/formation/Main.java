@@ -14,17 +14,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Main.methode1();
+	/*	Main.methode1();
 		
 		Main.methode2();
 		
-		Main.methode3();
+		Main.methode3();*/
 		
-		Main.methode4();
+		Main.methode4().then(Main.methode5()).subscribe(e -> System.out.println(e));
 		
-		Main.methode5();
+		/* Main.methode5();
 		
 		Main.methode6();
+
+		Main.methode7(); */
 	}
 
 	public static void methode1() {
@@ -86,24 +88,35 @@ public class Main {
 		});
 	}
 	
-	public static void methode4() {
+	public static Mono<Integer> methode4() {
 
-		Mono<Integer> result = Flux.range(1, 10).map(i -> 3 * i)
+		return Flux.range(1, 10).map(i -> 3 * i)
 												.filter(i -> i % 2 == 0)
 												.flatMap(i -> Flux.just(i, -i))
-												.log()											
+												.log()
 												.reduce(0,(x, y) -> x + y);
 
-		result.subscribe(System.out::println);
+
 		
 	}
-	
-	public static void methode5() {
+	public static Mono<Integer> methode5() {
+		return Flux.range(1, 10)
+				.handle((value, sink) -> {
+					var times3 = value*3;
+					if (times3 % 2 == 0) {
+						sink.next(times3);
+					}
+				}).flatMap(i -> Flux.just(i, -(Integer)i))
+				.doOnNext(e -> System.out.println("From methode5 "+e))
+				.reduce(0,(x, y) -> x + (Integer)y);
+
+	}
+	public static void methode6() {
 		Flux.just(1, 2, 3, 4).map(i -> i * 2).zipWith(Flux.range(0, Integer.MAX_VALUE),
 				(one, two) -> String.format("First Flux: %d, Second Flux: %d", one, two)).log().subscribe();
 	}
 	
-	public static void methode6() {
+	public static void methode7() {
 		Flux.range(1,5).delayElements(Duration.ofSeconds(1)).log().subscribe();
 
 		try {
@@ -113,4 +126,6 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
+
+
 }
