@@ -7,7 +7,7 @@
   	<properties>
 		<maven.compiler.target>21</maven.compiler.target>
 		<maven.compiler.source>21</maven.compiler.source>
-		<reactor.version>3.6.5</reactor.version>
+		<reactor.version>3.6.6</reactor.version>
 	</properties>
 
 	<dependencies>

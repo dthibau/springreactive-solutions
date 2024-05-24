@@ -1,13 +1,11 @@
 package org.formation;
 
 import java.util.UUID;
-import java.util.function.Consumer;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Scheduler;
 import reactor.core.scheduler.Schedulers;
-import reactor.util.context.ContextView;
 
 
 public class MainContext {
@@ -17,7 +15,7 @@ public class MainContext {
 		Scheduler daemons = Schedulers.newParallel("Par",2,false);
 
 		for ( int i= 0; i< 5; i++) {
-			doPrefix(MainThread.methode1())
+			doPrefix(MainScheduler.methode1())
 			.contextWrite(ctx -> ctx.put("uuid", ""+UUID.randomUUID()))
 			.log()
 			.subscribeOn(daemons)
@@ -32,8 +30,6 @@ public class MainContext {
                     .map(uid -> {
                     	return uid + " " + data;
                     }))
-                	
-
                 );
 	}
 }
