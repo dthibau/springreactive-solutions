@@ -2,14 +2,13 @@ package org.formation;
 
 public class Event {
 	private String eventId;
-    private String eventTs;
-    
+	private int number;
+
     public Event() {}
     
-	public Event(String eventId, String eventTs) {
+	public Event(String eventId) {
 		super();
 		this.eventId = eventId;
-		this.eventTs = eventTs;
 	}
 
 	public String getEventId() {
@@ -20,15 +19,11 @@ public class Event {
 		this.eventId = eventId;
 	}
 
-	public String getEventTs() {
-		return eventTs;
+	public int getNumber() {
+		return number;
 	}
 
-	public void setEventTs(String eventTs) {
-		this.eventTs = eventTs;
+	public void setNumber(int number) {
+		this.number = number;
 	}
-	
-	
-    
-    
 }

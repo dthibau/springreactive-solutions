@@ -28,8 +28,5 @@ public class WebsocketConfig {
 	    return handlerMapping;
 	}
 	
-	@Bean
-    public WebSocketHandlerAdapter handlerAdapter() {
-        return new WebSocketHandlerAdapter();
-    }
+
 }

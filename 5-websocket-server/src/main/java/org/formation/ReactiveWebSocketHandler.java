@@ -20,17 +20,20 @@ public class ReactiveWebSocketHandler implements WebSocketHandler {
      
 	private static final ObjectMapper json = new ObjectMapper();
 
-    private Flux<String> eventFlux = Flux.generate(sink -> {
-        Event event = new Event(randomUUID().toString(), LocalDateTime.now().toString());
-        try {
-            sink.next(json.writeValueAsString(event));
-        } catch (JsonProcessingException e) {
-            sink.error(e);
-        }
+    private Flux<Event> eventFlux = Flux.generate(sink -> {
+        Event event = new Event(randomUUID().toString());
+        sink.next(event);
     });
  
 	private Flux<String> intervalFlux = Flux.interval(Duration.ofMillis(1000L))
-		      .zipWith(eventFlux, (time, event) -> event);
+		      .zipWith(eventFlux, (time, event) -> {
+                  ((Event)event).setNumber(time.intValue());
+                  try {
+                      return json.writeValueAsString(event);
+                  } catch (JsonProcessingException e) {
+                      throw new RuntimeException(e);
+                  }
+              });
 	
     @Override
     public Mono<Void> handle(WebSocketSession webSocketSession) {
