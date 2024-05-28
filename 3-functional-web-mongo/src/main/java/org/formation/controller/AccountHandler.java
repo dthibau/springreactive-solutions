@@ -25,8 +25,10 @@ public class AccountHandler {
 	}
 
 	public Mono<ServerResponse> createAccount(ServerRequest request) {
+		System.out.println("Create account");
 		Mono<Account> account = request.bodyToMono(Account.class);
-		return ServerResponse.ok().body(accountRepository.saveAll(account), Account.class);
+		return account.flatMap(a -> ServerResponse.ok().body(accountRepository.save(a), Account.class));
+
 	}
 
 	public Mono<ServerResponse> getAccount(ServerRequest request) {
