@@ -1,4 +1,6 @@
-package org.formation;
+package org.formation.model;
+
+import org.springframework.data.annotation.Id;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Account {
 	
-    private String id;
+	@Id
+    private Long id;
     private String owner;
     private Double amount;
     
